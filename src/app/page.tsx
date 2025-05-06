@@ -1,15 +1,12 @@
 'use client';
 import Header from "./components/Header";
-import ThemeButton from "./components/ThemeButton";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ChatBot from './components/ChatBot';
 
 export default function Home() {
   return (
       <main>
         <Header/>
-        <ThemeButton/>
         <div className="flex justify-between items-center px-48 py-24 flex-wrap">
 
           <div className="flex flex-col gap-4">
@@ -39,7 +36,6 @@ export default function Home() {
           <p className="text-2xl py-8"><p>&#123; &nbsp; Aqui você encontra meus projetos, aprendizados e experiências enquanto trilho meu caminho no mundo da tecnologia &nbsp; &#125;</p>
           </p>
         </div>
-        <ChatBot />
       </main>
     
   );
