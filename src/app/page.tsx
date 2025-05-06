@@ -1,7 +1,9 @@
+'use client';
 import Header from "./components/Header";
 import ThemeButton from "./components/ThemeButton";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ChatBot from './components/ChatBot';
 
 export default function Home() {
   return (
@@ -16,13 +18,12 @@ export default function Home() {
             <p className="text-lg text-gray-400">Desenvolvedor</p>
 
             <div className="flex gap-4">
-              {/* <button className="p-4 bg-[#FFFFFF] rounded"><LinkedInIcon className="text-black" />
-              </button> */}
+             
               <a className="p-4 bg-[#FFFFFF] rounded" href="https://www.linkedin.com/in/%C3%A1lvarolu%C3%ADs/" target="blank"><LinkedInIcon className="text-black" /></a>
 
               <a className="p-4 bg-[#FFFFFF] rounded" href="https://github.com/latysno" target="blank"><GitHubIcon className="text-black" /></a>
 
-              {/* <button className="p-4 bg-[#FFFFFF] rounded"><GitHubIcon className="text-black" /></button> */}
+              
             </div>
 
           </div>
@@ -38,6 +39,7 @@ export default function Home() {
           <p className="text-2xl py-8"><p>&#123; &nbsp; Aqui você encontra meus projetos, aprendizados e experiências enquanto trilho meu caminho no mundo da tecnologia &nbsp; &#125;</p>
           </p>
         </div>
+        <ChatBot />
       </main>
     
   );
