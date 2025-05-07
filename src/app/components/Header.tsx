@@ -15,13 +15,13 @@ export default function Header() {
           Home
         </Link>
         <Link
-          href="/sobre-mim"
+          href="/aboutMe"
           className="inline-flex items-center text-sm font-think text-[#FFFFFF] hover:text-cyan-500"
         >
           Sobre Mim
         </Link>
         <Link
-          href="/projetos"
+          href="/projects"
           className="inline-flex items-center text-sm font-think text-[#FFFFFF] hover:text-cyan-500"
         >
           Projetos
