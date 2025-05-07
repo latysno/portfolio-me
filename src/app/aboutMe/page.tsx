@@ -10,6 +10,8 @@ export default function AboutMePage(){
     return(
         <main>
             <Header/>
+
+            <h1 className="m-10 font-normal text-xl">&lt; &nbsp; Sobre Mim &nbsp; &gt;</h1>
             
             <div>
 
