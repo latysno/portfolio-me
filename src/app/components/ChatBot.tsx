@@ -12,6 +12,18 @@ export default function ChatBot() {
 
   // Auto-scroll ao receber novas mensagens
   useEffect(() => {
+
+    if (messages.length === 0) {
+    setMessages([
+        {
+          id: Date.now(),
+          sender: 'bot',
+          text:
+            'Olá! 👋 Eu sou o assistente virtual do Álvaro. Trabalho com integração de sistemas, automações com Bitrix24, N8N, e desenvolvimento em PHP, Python e JSON. Me diga como posso te ajudar!',
+        },
+      ]);
+    }
+
     if (containerRef.current) {
       containerRef.current.scrollTo({
         top: containerRef.current.scrollHeight,

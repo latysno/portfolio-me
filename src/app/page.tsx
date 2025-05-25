@@ -2,6 +2,7 @@
 import Header from "./components/Header";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import DownloadCVButton from "./components/DownloadCVButton";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
 
               <a className="p-4 bg-[#FFFFFF] rounded" href="https://github.com/latysno" target="blank"><GitHubIcon className="text-black" /></a>
 
-              
+              <DownloadCVButton/>
             </div>
 
           </div>
