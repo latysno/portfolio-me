@@ -8,6 +8,7 @@ export default function Home() {
   return (
       <main>
         <Header/>
+        
         <div className="flex justify-between items-center px-48 py-24 flex-wrap">
 
           <div className="flex flex-col gap-4">

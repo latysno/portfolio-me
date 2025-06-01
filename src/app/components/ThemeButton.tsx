@@ -1,23 +1,38 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-export default function ThemeButton(){
-    const [theme, setTheme] = useState(()=> localStorage.getItem('theme')||'light');
-    
-    useEffect(()=> {
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-        localStorage.setItem('theme', theme);
-    },[theme]);
+export default function ThemeButton() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-    return (
-        <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="p-2 rounded bg-[#FFFFFF] dark:bg-[#0D201F] absolute right-14 top-14 border-1 border-[#3F3D3D]"
-        >
-          {theme === 'dark' ? <DarkModeIcon/> : <LightModeIcon/>}
-        </button>
-      );
-};
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      setTheme('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      setTheme('light');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
+  };
+
+  return (
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded bg-white dark:bg-gray-800 text-black dark:text-white border dark:border-white border-black"
+    >
+      {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+    </button>
+  );
+}
