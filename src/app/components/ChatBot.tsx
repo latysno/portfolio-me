@@ -19,7 +19,7 @@ export default function ChatBot() {
           id: Date.now(),
           sender: 'bot',
           text:
-            'Olá! 👋 Eu sou o assistente virtual do Álvaro. Trabalho com integração de sistemas, automações com Bitrix24, N8N, e desenvolvimento em PHP, Python e JSON. Me diga como posso te ajudar!',
+            'Olá! 👋 Eu sou o assistente virtual do Álvaro. Trabalho com integração de sistemas, automações com Bitrix24, N8N, e desenvolvimento em JavaScript , ReactJS, NodeJS e Java . Me diga como posso te ajudar!',
         },
       ]);
     }
@@ -46,7 +46,7 @@ export default function ChatBot() {
 
     try {
       const response = await fetch(
-        'https://webhook-n8n.fluxora.space/webhook/alvaroPortifolio',
+        'https://webhook-n8n.fluxora.space/webhook/fd240d59-c2fe-4629-9e71-ae6264e17e59',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -64,7 +64,7 @@ export default function ChatBot() {
         {
           id: Date.now() + 1,
           sender: 'bot',
-          text: data.reply || 'Resposta não disponível.',
+          text: data.reply?.response || 'Resposta não disponível.',
         },
       ]);
     } catch (err: any) {
