@@ -67,13 +67,16 @@ export default function ChatBot() {
           text: data.reply?.response || 'Resposta não disponível.',
         },
       ]);
-    } catch (err: any) {
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Erro desconhecido';
+
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now() + 2,
           sender: 'bot',
-          text: `Erro: ${err.message || 'desconhecido'}`,
+          text: `Erro: ${errorMessage}`,
         },
       ]);
     } finally {

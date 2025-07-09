@@ -1,5 +1,5 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { repositorios } from "../dataRepositorios";
+import Image from 'next/image';
 
 interface CardProjectProps {
   nome: string;
@@ -11,9 +11,11 @@ interface CardProjectProps {
 export default function CardProject({ nome, descricao, imagem, link }: CardProjectProps) {
   return (
     <div className="bg-[#0D201F] rounded-xl border border-[#3F3D3D] w-80 p-4 flex flex-col items-center space-y-4 shadow-lg">
-      <img
+      <Image
         src={imagem}
         alt={nome}
+        width={320}
+        height={192}
         className="rounded-md w-full h-48 object-cover"
       />
       <div className="text-center text-white">
@@ -26,7 +28,7 @@ export default function CardProject({ nome, descricao, imagem, link }: CardProje
         rel="noopener noreferrer"
         className="bg-white p-2 rounded-md hover:bg-gray-200 transition"
       >
-        <GitHubIcon  className="text-black " />
+        <GitHubIcon className="text-black" />
       </a>
     </div>
   );
